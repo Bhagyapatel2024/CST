@@ -25,7 +25,7 @@ const Reports = () => {
   useEffect(() => {
     const fetchFeedbackData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/feedback/all');
+        const response = await axios.get('https://client-sentiment-tracker-api.vercel.app/api/feedback/all');
         setFeedbackData(response.data);
         analyzeFeedback(response.data);
       } catch (error) {
