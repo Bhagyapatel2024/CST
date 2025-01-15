@@ -1,0 +1,120 @@
+/* Developer.css */
+
+/* Basic styles for the Developer page */
+.developer-container {
+    background: linear-gradient(to right, #1f2937, #111827);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .developer-profile {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .profile-image img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .profile-image img:hover {
+    transform: scale(1.1);
+  }
+  
+  .developer-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .developer-role {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+  }
+  
+  .about-developer {
+    background-color: #111827;
+    padding: 3rem;
+    margin: 2rem 1rem;
+    border-radius: 1.5rem;
+    text-align: center;
+  }
+  
+  .about-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .about-description {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .projects {
+    background-color: #1f2937;
+    width: 100%;
+    padding: 3rem 2rem;
+  }
+  
+  .projects-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .project-card {
+    background-color: #2d3748;
+    padding: 1.5rem;
+    width: 250px;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.8);
+  }
+  
+  .project-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .project-description {
+    font-size: 1rem;
+    color: #cbd5e0;
+    margin-top: 1rem;
+  }
+  
+  .project-link {
+    color: #63b3ed;
+    font-size: 1.1rem;
+    text-decoration: none;
+    margin-top: 1rem;
+    display: inline-block;
+  }
+  
+  .project-link:hover {
+    color: #2b6cb0;
+  }
+  
