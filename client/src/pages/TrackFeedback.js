@@ -10,7 +10,7 @@ const TrackFeedback = () => {
 
   const handleTrackFeedback = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/feedback/${feedbackId}`);
+      const response = await axios.get(`https://client-sentiment-tracker-api.vercel.app/api/feedback/${feedbackId}`);
       setFeedbackDetails(response.data);
       setError('');
       setIsTracked(true);
