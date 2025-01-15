@@ -27,7 +27,7 @@ const Feedback = () => {
         message,
       };
 
-      const response = await axios.post('http://localhost:5000/api/feedback/submit', feedbackData);
+      const response = await axios.post('https://client-sentiment-tracker-api.vercel.app/api/feedback/submit', feedbackData);
 
       if (response.status === 201) {
         setFeedbackId(response.data.feedbackId);
