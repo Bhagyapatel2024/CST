@@ -17,9 +17,16 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+
 app.use(express.json()); // For parsing JSON bodies
 
+
+
+app.use(cors({
+  origin: 'https://client-sentiment-tracker.vercel.app', // Replace with your front-end domain
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Add methods as needed
+  credentials: true // If you're using cookies/authentication
+}));
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
