@@ -17,16 +17,7 @@ dotenv.config();
 const app = express();
 
 // Middleware
-// app.use(cors());
-
-
-// Middleware
-app.use(cors({
-  origin: 'https://client-sentiment-tracker.vercel.app', // Replace with your frontend's URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-}));
-
+app.use(cors());
 app.use(express.json()); // For parsing JSON bodies
 
 // MongoDB connection
