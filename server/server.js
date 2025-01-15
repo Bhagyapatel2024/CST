@@ -23,7 +23,8 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true // For cookies/authentication
 }));
-
+// Handle preflight OPTIONS requests globally
+app.options('*', cors());
 // Express JSON Middleware
 app.use(express.json());
 
