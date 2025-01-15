@@ -12,33 +12,13 @@ const bodyParser = require('body-parser');
 // Load environment variables
 
 dotenv.config();
+
 // Initialize Express
 const app = express();
 
-
-// CORS Middleware (Place this immediately after app initialization)
-app.use(cors({
-  origin: 'https://client-sentiment-tracker.vercel.app', // Allowed front-end domain
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true // For cookies/authentication
-}));
-// Handle preflight OPTIONS requests globally
-app.options('*', cors());
-// Express JSON Middleware
-app.use(express.json());
-
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://client-sentiment-tracker.vercel.app");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  if (req.method === "OPTIONS") {
-    return res.status(200).end();
-  }
-  next();
-});
-
-
+// Middleware
+app.use(cors());
+app.use(express.json()); // For parsing JSON bodies
 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
