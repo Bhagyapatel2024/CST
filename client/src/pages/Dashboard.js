@@ -23,7 +23,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchFeedbacks = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/feedback/all');
+        const response = await axios.get('https://client-sentiment-tracker-api.vercel.app/api/feedback/all');
         setFeedbacks(response.data);
       } catch (err) {
         console.error("Error fetching data:", err);
