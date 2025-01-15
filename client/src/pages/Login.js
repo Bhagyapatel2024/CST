@@ -13,7 +13,7 @@ const Login = () => {
     setError(''); // Clear previous errors
 
     try {
-      const response = await fetch('http://localhost:5000/api/admin/login', { // Backend API URL
+      const response = await fetch('https://client-sentiment-tracker-api.vercel.app/api/admin/login', { // Backend API URL
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),
