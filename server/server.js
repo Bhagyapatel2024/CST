@@ -22,11 +22,22 @@ app.use(express.json()); // For parsing JSON bodies
 
 
 
+// Middleware for CORS
 app.use(cors({
   origin: 'https://client-sentiment-tracker.vercel.app', // Replace with your front-end domain
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Add methods as needed
-  credentials: true // If you're using cookies/authentication
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Include OPTIONS method
+  allowedHeaders: ['Content-Type', 'Authorization'], // Include necessary headers
+  credentials: true // If cookies/authentication are used
 }));
+
+// Handle preflight requests explicitly
+app.options('*', cors({
+  origin: 'https://client-sentiment-tracker.vercel.app', // Same origin as above
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
+
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
