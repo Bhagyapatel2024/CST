@@ -15,7 +15,7 @@ const ManageFeedbacks = () => {
   useEffect(() => {
     const fetchFeedbacks = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/feedback/all');
+        const response = await axios.get('https://client-sentiment-tracker-api.vercel.app/api/feedback/all');
         setFeedbacks(response.data);
       } catch (error) {
         console.error('Error fetching feedbacks:', error);
@@ -48,7 +48,7 @@ const ManageFeedbacks = () => {
     }
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/feedback/update-feedback/${selectedFeedback.feedbackId}`,
+        `https://client-sentiment-tracker-api.vercel.app/api/feedback/update-feedback/${selectedFeedback.feedbackId}`,
         { status, reply }
       );
       alert(response.data.message);
