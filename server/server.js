@@ -20,16 +20,16 @@ const app = express();
 app.use(cors());
 app.use(express.json()); // For parsing JSON bodies
 
-// // MongoDB connection
-// mongoose.connect(process.env.MONGO_URI
-//   // { useNewUrlParser: true, useUnifiedTopology: true }
-// )
-//   .then(() => {
-//     console.log('MongoDB Connected');
-//   })
-//   .catch((err) => {
-//     console.error('MongoDB connection error:', err);
-//   });
+// MongoDB connection
+mongoose.connect(process.env.MONGO_URI
+  // { useNewUrlParser: true, useUnifiedTopology: true }
+)
+  .then(() => {
+    console.log('MongoDB Connected');
+  })
+  .catch((err) => {
+    console.error('MongoDB connection error:', err);
+  });
 
 // Basic route
 app.get('/', (req, res) => {
