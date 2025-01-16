@@ -17,7 +17,16 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+
+  origin:"https://hireflow-bhagya.vercel.app"
+  
+}));
+
+
+
+
+
 app.use(express.json()); // For parsing JSON bodies
 
 // MongoDB connection
