@@ -19,7 +19,7 @@ const app = express();
 // Middleware
 app.use(cors({
 
-  origin:"https://hireflow-bhagya.vercel.app"
+  origin:"https://client-sentiment-tracker.vercel.app"
   
 }));
 
